@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selva Jeyakrishnan — Software Developer | AI/ML | Full-Stack</title>
+  <meta name="description" content="Selva Jeyakrishnan — Software developer specializing in AI/ML, full-stack development, automation, and intelligent software solutions.">
+  <meta property="og:title" content="Selva Jeyakrishnan — Software Developer">
+  <meta property="og:description" content="AI/ML • Full-Stack • Automation — Building intelligent software that solves real problems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://selvajeyakrishnan.dev">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">SJ<span class="logo-dot">.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Let's Work Together</a>
+      <button class="owner-trigger" id="ownerTrigger" title="Owner Access">🔒</button>
+    </div>
+  </nav>
+
+  <!-- Owner Login Modal -->
+  <div class="owner-login-overlay" id="ownerLoginOverlay">
+    <div class="owner-login-modal">
+      <button class="owner-login-close" id="ownerLoginClose">&times;</button>
+      <h3>Owner Access</h3>
+      <form id="ownerLoginForm">
+        <div class="ol-field">
+          <label>Email</label>
+          <input type="email" id="ownerEmail" required placeholder="your@email.com">
+        </div>
+        <div class="ol-field">
+          <label>Password</label>
+          <input type="password" id="ownerPassword" required placeholder="Password">
+        </div>
+        <div class="ol-error" id="ownerLoginError"></div>
+        <button type="submit" class="btn btn-primary btn-full" id="ownerLoginBtn">Sign In</button>
+      </form>
+      <a href="#" class="ol-back" id="ownerLoginBack">← Back to Portfolio</a>
+    </div>
+  </div>
+
+  <!-- Owner Control Bar -->
+  <div class="owner-bar" id="ownerBar">
+    <div class="owner-bar-inner">
+      <div class="owner-bar-left">
+        <span class="owner-bar-label">OWNER MODE</span>
+        <span class="owner-bar-status"><span class="owner-status-dot"></span> Connected</span>
+      </div>
+      <div class="owner-bar-nav" id="ownerBarNav">
+        <button class="owner-nav-btn active" data-section="overview">Overview</button>
+        <button class="owner-nav-btn" data-section="profile">Profile</button>
+        <button class="owner-nav-btn" data-section="skills">Skills</button>
+        <button class="owner-nav-btn" data-section="projects">Projects</button>
+        <button class="owner-nav-btn" data-section="services">Services</button>
+        <button class="owner-nav-btn" data-section="experience">Experience</button>
+        <button class="owner-nav-btn" data-section="media">Media</button>
+        <button class="owner-nav-btn" data-section="messages">Messages</button>
+        <button class="owner-nav-btn" data-section="social">Social</button>
+        <button class="owner-nav-btn" data-section="settings">Settings</button>
+      </div>
+      <div class="owner-bar-actions">
+        <button class="owner-action-btn" id="ownerPreviewBtn">Preview</button>
+        <button class="owner-action-btn owner-logout-btn" id="ownerLogoutBtn">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Owner Management Section -->
+  <div class="owner-section" id="ownerSection">
+    <div class="owner-section-inner" id="ownerSectionContent"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">✦ Available for Freelance Projects</span>
+        <h1 class="hero-title">I Build Software That<br>Solves <span class="hero-accent">Real Problems</span>.</h1>
+        <p class="hero-subtitle">Software developer specializing in AI/ML, full-stack applications, automation, dashboards, and intelligent software solutions.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Let's Work Together</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card hero-card-1">
+          <div class="hc-icon">🧠</div>
+          <span>AI / ML</span>
+        </div>
+        <div class="hero-card hero-card-2">
+          <div class="hc-icon">⚡</div>
+          <span>Full Stack</span>
+        </div>
+        <div class="hero-card hero-card-3">
+          <div class="hc-icon">🔄</div>
+          <span>Automation</span>
+        </div>
+        <div class="hero-visual-center">
+          <div class="hvc-ring hvc-ring-1"></div>
+          <div class="hvc-ring hvc-ring-2"></div>
+          <div class="hvc-ring hvc-ring-3"></div>
+          <div class="hvc-core">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Left: Profile Visual -->
+        <div class="about-visual" data-animate>
+          <div class="about-image-wrapper" id="aboutImageWrapper">
+            <div class="about-image-glow"></div>
+            <div class="about-image-frame">
+              <img src="selva_profile.jpg" alt="Selva Jeyakrishnan" class="about-profile-img" id="aboutProfileImg">
+            </div>
+            <canvas id="aboutParticles" class="about-particles-canvas"></canvas>
+          </div>
+          <!-- Floating Code Card -->
+          <div class="about-code-card" data-animate>
+            <div class="code-card-header">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-card-title">developer.py</span>
+            </div>
+            <pre class="code-card-body"><code><span class="cc-key">developer</span> = {
+    <span class="cc-str">"name"</span>: <span class="cc-val">"Selva Jeyakrishnan"</span>,
+    <span class="cc-str">"focus"</span>: [
+        <span class="cc-val">"AI/ML"</span>,
+        <span class="cc-val">"Full Stack"</span>,
+        <span class="cc-val">"Automation"</span>
+    ],
+    <span class="cc-str">"goal"</span>: <span class="cc-val">"Build useful software"</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Right: About Content -->
+        <div class="about-content" data-animate>
+          <span class="section-label">About Me</span>
+          <h2 class="about-heading">I'm Selva — I Build <span class="hero-accent">Ideas Into Software.</span></h2>
+          <p class="about-text">I'm a software developer passionate about building practical software, AI-powered applications, and modern web experiences.</p>
+          <p class="about-text">I enjoy taking an idea or real-world problem, breaking it down, and turning it into a working product using software development, AI/ML, automation, and full-stack technologies.</p>
+          <p class="about-text">My focus is not just writing code — it's building solutions that are useful, scalable, and easy to use.</p>
+
+          <!-- Identity Card -->
+          <div class="about-identity" data-animate>
+            <div class="identity-info">
+              <h3 class="identity-name">Selva Jeyakrishnan</h3>
+              <p class="identity-role">Software Developer</p>
+              <p class="identity-spec">AI/ML • Full Stack • Automation</p>
+            </div>
+            <div class="identity-status">
+              <span class="status-dot"></span>
+              <span>Open to Opportunities & Freelance Projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Can Do Section -->
+  <section class="whatido-section" id="whatido">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">What I Do</span>
+        <h2>What I Can Do</h2>
+        <p>I turn complex ideas into practical digital solutions.</p>
+      </div>
+      <div class="whatido-grid">
+        <div class="whatido-card" data-animate>
+          <div class="whatido-icon">🧠</div>
+          <h3>AI & Machine Learning</h3>
+          <p>Build intelligent applications using machine learning, NLP, data processing, and AI-powered workflows.</p>
+          <div class="whatido-tags">
+            <span>Python</span><span>ML</span><span>NLP</span><span>TensorFlow</span>
+          </div>
+        </div>
+        <div class="whatido-card" data-animate>
+          <div class="whatido-icon">⚡</div>
+          <h3>Full-Stack Development</h3>
+          <p>Build complete web applications with modern interfaces, backend APIs, databases, authentication, and business logic.</p>
+          <div class="whatido-tags">
+            <span>Python</span><span>Flask</span><span>FastAPI</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="whatido-card" data-animate>
+          <div class="whatido-icon">🔄</div>
+          <h3>Automation</h3>
+          <p>Turn repetitive manual processes into automated workflows that save time and reduce unnecessary work.</p>
+          <div class="whatido-tags">
+            <span>Python</span><span>APIs</span><span>Automation</span>
+          </div>
+        </div>
+        <div class="whatido-card" data-animate>
+          <div class="whatido-icon">🧩</div>
+          <h3>Custom Software</h3>
+          <p>Build software tailored to specific business requirements, workflows, and real-world problems.</p>
+          <div class="whatido-tags">
+            <span>Web Apps</span><span>APIs</span><span>Databases</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Strip -->
+  <section class="skills-strip-section" id="skillsStrip">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Tech Stack</span>
+        <h2>Technologies I Work With</h2>
+      </div>
+      <div class="skills-strip" data-animate>
+        <span class="strip-tag">Python</span>
+        <span class="strip-tag">Java</span>
+        <span class="strip-tag">JavaScript</span>
+        <span class="strip-tag">SQL</span>
+        <span class="strip-tag">Flask</span>
+        <span class="strip-tag">FastAPI</span>
+        <span class="strip-tag">TensorFlow</span>
+        <span class="strip-tag">Scikit-learn</span>
+        <span class="strip-tag">Pandas</span>
+        <span class="strip-tag">NumPy</span>
+        <span class="strip-tag">HTML</span>
+        <span class="strip-tag">CSS</span>
+        <span class="strip-tag">Git</span>
+        <span class="strip-tag">GitHub</span>
+      </div>
+      <!-- Stats Row -->
+      <div class="stats-row" data-animate>
+        <div class="stat-item">
+          <span class="stat-big">AI / ML</span>
+          <span class="stat-small">Primary Focus</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-big">Full Stack</span>
+          <span class="stat-small">Development</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-big">Automation</span>
+          <span class="stat-small">Solutions</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-big">Continuous</span>
+          <span class="stat-small">Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Approach -->
+  <section class="approach-section" id="approach">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Approach</span>
+        <h2>My Approach</h2>
+      </div>
+      <div class="approach-timeline">
+        <div class="approach-step" data-animate>
+          <div class="approach-number">01</div>
+          <div class="approach-line"></div>
+          <h3>Understand</h3>
+          <p>Understand the problem before jumping into code.</p>
+        </div>
+        <div class="approach-step" data-animate>
+          <div class="approach-number">02</div>
+          <div class="approach-line"></div>
+          <h3>Build</h3>
+          <p>Create a practical solution using the right technology.</p>
+        </div>
+        <div class="approach-step" data-animate>
+          <div class="approach-number">03</div>
+          <h3>Improve</h3>
+          <p>Test, refine, optimize, and continuously improve the product.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Skills</span>
+        <h2>Technology Stack</h2>
+        <p>Technologies and tools I use to build software solutions.</p>
+      </div>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Projects</span>
+        <h2>Featured Projects</h2>
+        <p>Selected work that demonstrates my capabilities across development and AI/ML.</p>
+      </div>
+      <div class="project-filters" id="projectFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="automation">Automation</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Services</span>
+        <h2>What I Can Build For You</h2>
+        <p>End-to-end software development services tailored to your needs.</p>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+      <div class="services-cta" data-animate>
+        <p>Have an idea? Let's build it.</p>
+        <a href="#contact" class="btn btn-primary">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Process</span>
+        <h2>How I Work</h2>
+        <p>A structured approach to delivering quality software.</p>
+      </div>
+      <div class="process-timeline" id="processTimeline"></div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience-section" id="experience">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Experience</span>
+        <h2>Professional Experience</h2>
+      </div>
+      <div class="experience-list">
+        <div class="experience-card" data-animate>
+          <div class="exp-header">
+            <div>
+              <h3>Software Development Intern</h3>
+              <p class="exp-company">Cognifyz IT Solutions Pvt. Ltd.</p>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-type">Remote</span>
+              <span class="exp-date">July 2026 – August 2026</span>
+            </div>
+          </div>
+          <p class="exp-description">Completed a software development internship focused on practical programming tasks, problem solving, and building real-world software solutions.</p>
+          <div class="exp-tags">
+            <span>Software Development</span>
+            <span>Programming</span>
+            <span>Problem Solving</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub / Coding Section -->
+  <section class="github-section" id="github">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Code</span>
+        <h2>Building. Learning. Improving.</h2>
+      </div>
+      <div class="github-content" data-animate>
+        <div class="github-terminal">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">~/selva-jeyakrishnan</span>
+          </div>
+          <div class="terminal-body">
+            <p class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">cat</span> about.md</p>
+            <p class="terminal-line t-output">## Selva Jeyakrishnan</p>
+            <p class="terminal-line t-output">Software Developer | AI/ML | Full Stack</p>
+            <p class="terminal-line t-output">&nbsp;</p>
+            <p class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">echo</span> $CURRENTLY_BUILDING</p>
+            <p class="terminal-line t-output">AI-powered applications & full-stack solutions</p>
+            <p class="terminal-line t-output">&nbsp;</p>
+            <p class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">ls</span> skills/</p>
+            <p class="terminal-line t-output">python/  flask/  fastapi/  ml/  nlp/  web/  sql/  docker/</p>
+            <p class="terminal-line">&nbsp;</p>
+            <p class="terminal-line"><span class="t-prompt">$</span> <span class="terminal-cursor">|</span></p>
+          </div>
+        </div>
+        <div class="github-links">
+          <a href="https://github.com/selvajeyakrishnan" target="_blank" rel="noopener" class="github-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub Profile
+          </a>
+          <a href="https://leetcode.com/selvajeyakrishnan" target="_blank" rel="noopener" class="github-btn secondary">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.524 2.132 7.734-.049l2.326-2.295c.653-.645.653-1.708 0-2.354l-4.29-4.198c-.408-.396-.866-.74-1.345-1.037l-.025-.016-.038-.035-2.53-2.399a1.374 1.374 0 0 0-.961-.438zm-4.328 5.537l4.29 4.198c.244.24.463.499.647.773l-2.326 2.296c-1.473 1.45-3.849 1.479-5.35.049l-4.277-4.193a4.11 4.11 0 0 1-.935-1.343l.001-.003 2.53-2.399a4.104 4.104 0 0 1 1.098-.757z"/></svg>
+            LeetCode
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Work With Me -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Why Me</span>
+        <h2>Why Work With Me</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card" data-animate>
+          <div class="why-number">01</div>
+          <h3>Problem Solver</h3>
+          <p>I focus on understanding the problem before building the solution.</p>
+        </div>
+        <div class="why-card" data-animate>
+          <div class="why-number">02</div>
+          <h3>Practical Development</h3>
+          <p>I build working applications rather than just prototypes or concepts.</p>
+        </div>
+        <div class="why-card" data-animate>
+          <div class="why-number">03</div>
+          <h3>AI + Software</h3>
+          <p>I combine AI capabilities with real software products.</p>
+        </div>
+        <div class="why-card" data-animate>
+          <div class="why-number">04</div>
+          <h3>Continuous Learning</h3>
+          <p>I continuously improve my technical skills by building and solving problems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info" data-animate>
+          <span class="section-label">Contact</span>
+          <h2>Have a Project in Mind?</h2>
+          <p>Tell me what you're trying to build. I'll help turn the idea into a practical software solution.</p>
+          <div class="contact-details">
+            <a href="mailto:selvajeyakrishnan@email.com" class="contact-detail">
+              <span class="cd-icon">✉</span>
+              <span>selvajeyakrishnan@email.com</span>
+            </a>
+            <a href="https://github.com/selvajeyakrishnan" target="_blank" rel="noopener" class="contact-detail">
+              <span class="cd-icon">⌨</span>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/selvajeyakrishnan" target="_blank" rel="noopener" class="contact-detail">
+              <span class="cd-icon">🔗</span>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" data-animate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Company name (optional)">
+            </div>
+            <div class="form-group">
+              <label for="projectType">Project Type *</label>
+              <select id="projectType" name="projectType" required>
+                <option value="" disabled selected>Select project type</option>
+                <option>Web Application</option>
+                <option>AI/ML Solution</option>
+                <option>Automation Tool</option>
+                <option>Dashboard</option>
+                <option>API Development</option>
+                <option>Custom Software</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget Range</label>
+            <select id="budget" name="budget">
+              <option value="" disabled selected>Select budget range</option>
+              <option>Under $500</option>
+              <option>$500 - $1,000</option>
+              <option>$1,000 - $5,000</option>
+              <option>$5,000 - $10,000</option>
+              <option>$10,000+</option>
+              <option>To be discussed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Project Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">SJ<span class="logo-dot">.</span></a>
+          <p>Software Developer • AI/ML • Full Stack • Automation</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/selvajeyakrishnan" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/selvajeyakrishnan" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Selva Jeyakrishnan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
