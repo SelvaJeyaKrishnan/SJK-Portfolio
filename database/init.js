@@ -170,7 +170,7 @@ async function initDatabase() {
       'I enjoy taking an idea or real-world problem, breaking it down, and turning it into a working product using software development, AI/ML, automation, and full-stack technologies. My focus is not just writing code — it''s building solutions that are useful, scalable, and easy to use.',
       'Open to Opportunities & Freelance Projects',
       'selva_profile.jpg',
-      'selvajeyakrishnan@email.com'
+      'selva72007@gmail.com'
     )`);
     console.log('Profile seeded.');
   }
@@ -276,7 +276,7 @@ async function initDatabase() {
     runMany('INSERT INTO social_links (platform, url, display_order) VALUES (?, ?, ?)', [
       ['GitHub', 'https://github.com/selvajeyakrishnan', 1],
       ['LinkedIn', 'https://linkedin.com/in/selvajeyakrishnan', 2],
-      ['Email', 'mailto:selvajeyakrishnan@email.com', 3]
+      ['Email', 'mailto:selva72007@gmail.com', 3]
     ]);
     console.log('Default social links seeded.');
   }
